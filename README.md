@@ -16,7 +16,7 @@ Throughout the process, the agent, guided by policy $\pi_t$, engages in explorat
 
 ## Theoretical Analysis
 **Assumption 1**  
-$L_f$ is strongly convex and smooth such that $\exists ~m>0,~M>0$, for any $\boldsymbol{w} \in \text{dom }L_f$, we have: $ MI \succeq \nabla^2 L_f(\boldsymbol{w}) \succeq mI. $
+$L_f$ is strongly convex and smooth such that $\exists ~m>0,~M>0$, for any $\boldsymbol{w} \in \text{dom }L_f$, we have $MI \succeq \nabla^2 L_f(\boldsymbol{w}) \succeq mI.$
 
 The following theorem shows a reduced error bound with causal exploration.
 
