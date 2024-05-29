@@ -25,3 +25,25 @@ The following theorem shows a reduced error bound with causal exploration.
 **Theorem 1.** Suppose **Assumption 1** holds, and suppose the density of the causal matrix $D$ is $\delta$ and the model is initialized with $\boldsymbol{w_0}$. Then for every optimization step $k$, we have: $$L_f(\boldsymbol{w}^c(k)) - L_f^\star \le \delta^k \left( L_f(\boldsymbol{w}(k)) - L_f^\star\right) \le \frac M2 \left[ \delta  \left( 1- \frac m M \right)\right]^k \parallel \boldsymbol{w_0} - \boldsymbol{w}^\star \parallel^2_2.$$
 
 The first inequality establishes an upper bound for $\xi$ at $ \delta^k $. Given that $0 \le \delta^k \le 1$, this confirms the effectiveness of causal exploration in enhancing efficiency. The subsequent inequality establishes that the training error of causal exploration gradually converges to the optimal value, exhibiting an \textit{exponential} convergence rate characterized by the decay of the factor $\left[ \delta  \left( 1- \frac m M \right)\right]^k$. Moreover, this theorem implies that the advantages of causal exploration are relevant to the sparseness of causal structure. The sparser the causal structure, the faster our method learns. When the causal matrix $D$ is a complete matrix ($\delta = 1$), causal exploration degenerates into non-causal prediction-based exploration. The proof for Theorem 1 is provided in [Supplementary_material.pdf](https://github.com/CMACH508/CausalExploration/tree/main/Supplementary_material.pdf).
+
+## Experiments
+**Synthetic Datasets**
+We build our simulated environment following the state space model with controls. When the agent takes an action $\boldsymbol{a}_t$ based on the current state, the environment provides feedback $\boldsymbol{s}_{t+1}$ at the next time. We denote the generative environment as $$\boldsymbol{s}_1 \sim \mathcal{N}(\boldsymbol{0}, I), \quad \boldsymbol{s}_t \sim \mathcal{N} (h(\boldsymbol{s}_{t-1},\boldsymbol{a}_{t-1}), \Sigma),$$ where $\Sigma$ is the covariance matrix and $h$ is the mean value as the ground truth transition function implemented by deep neural networks under causal graph $\mathcal{G}$. Specifically, the linear condition consists of a single-layer network, and the nonlinear function is three-layer MLPs with sigmoid activation.
+
+<img src="./figures/synthetic_exp.png" width="100%"/>
+
+To install, run
+```
+$ cd ./simulation 
+$ conda env create -f environment.yml
+```
+or
+```
+$ cd ./simulation 
+$ conda create -n your_env_name python=3.7
+$ pip install -r requirements.txt
+```
+To train, run
+```
+python main.py
+```
