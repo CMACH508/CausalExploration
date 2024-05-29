@@ -2,7 +2,7 @@
 Caught up in the whirlwind of NeurIPS'24 — this repo might have to wait a bit for its turn in the spotlight!
 
 # CausalExploration
-This is the official implementation of the paper "Boosting Efficiency in Task-Agnostic Exploration Through Causal Knowledge", which was accepted for IJCAI'24. 
+This is the official implementation of the paper "Boosting Efficiency in Task-Agnostic Exploration through Causal Knowledge", which was accepted for IJCAI'24. 
 
 ## Introduction
 The effectiveness of model training heavily relies on the quality of available training resources. However, budget constraints often impose limitations on data collection efforts. To tackle this challenge, we introduce *causal exploration* in this paper, a strategy that leverages the underlying causal knowledge for both data collection and model training. We, in particular, focus on enhancing the sample efficiency and reliability of the world model learning within the domain of task-agnostic reinforcement learning. During the exploration phase, the agent actively selects actions expected to yield causal insights most beneficial for world model training. Concurrently, the causal knowledge is acquired and incrementally refined with the ongoing collection of data. We demonstrate that causal exploration aids in learning accurate world models using fewer data and provide theoretical guarantees for its convergence. Empirical experiments, on both synthetic data and real-world applications, further validate the benefits of causal exploration.
