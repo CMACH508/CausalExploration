@@ -9,5 +9,10 @@ Our key contributions are summarized as:
 - To efficiently learn and use causal structural constraints, we develop an online method for causal discovery and formulate the world model with explicit structural embeddings. During exploration, we train the dynamics model under a novel weight-sharing-decomposition schema that can avoid additional computational burden.
 - Theoretically, we show that, given strong convexity and smoothness assumptions, our approach attains a superior convergence rate compared to non-causal methods. Empirical experiments further demonstrate the robustness of our online causal discovery method and validate the effectiveness of causal exploration across a range of demanding reinforcement learning environments.
 
+## Method Overview
+Throughout the process, the agent, guided by policy $\pi_t$, engages in exploration to gather data that are most beneficial for model training. Meanwhile, causal knowledge and the world model are continuously refined with the ongoing data collection.
+
+<img src="./figures/framework.png" width="100%"/>
+
 ## News
 Caught up in the whirlwind of NeurIPS'24 — this repo might have to wait a bit for its turn in the spotlight!
