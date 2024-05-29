@@ -56,7 +56,7 @@ Traffic signal control is an important means of mitigating congestion in traffic
 **MuJoCo Tasks.**
 We also evaluate causal exploration on the challenging [MuJoCo](https://mujoco.org) tasks, where the state-action dimensions range from tens (Hopper-v2) to hundreds (Humanoid-v2). Implementation details and more experimental results including the identified causal structures are given in [Supplementary_material.pdf](https://github.com/CMACH508/CausalExploration/tree/main/Supplementary_material.pdf).
 
-<img src="./figures/MuJoCo_exp.png" width="100%"/>
+<img src="./figures/mujoco_exp.png" width="100%"/>
 
 ## Acknowledgements
 Our codes are partly based on the following GitHub repository: [IntelliLight](https://github.com/wingsweihua/IntelliLight), [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch/). Thanks for their awesome works.
