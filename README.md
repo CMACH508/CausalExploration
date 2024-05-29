@@ -28,7 +28,7 @@ The first inequality establishes an upper bound for $\xi$ at $ \delta^k $. Given
 
 ## Experiments
 **Synthetic Datasets.**
-We build our simulated environment following the state space model with controls. When the agent takes an action $\boldsymbol{a}_t$ based on the current state, the environment provides feedback $\boldsymbol{s}_{t+1}$ at the next time. We denote the generative environment as $$\boldsymbol{s}_1 \sim \mathcal{N}(\boldsymbol{0}, I), \quad \boldsymbol{s}_t \sim \mathcal{N} (h(\boldsymbol{s}_{t-1},\boldsymbol{a}_{t-1}), \Sigma),$$ where $\Sigma$ is the covariance matrix and $h$ is the mean value as the ground truth transition function implemented by deep neural networks under causal graph $\mathcal{G}$. Specifically, the linear condition consists of a single-layer network, and the nonlinear function is three-layer MLPs with sigmoid activation.
+We build our simulated environment following the state space model with controls. When the agent takes an action $\boldsymbol{a_t}$ based on the current state, the environment provides feedback $\boldsymbol{s_{t+1}}$ at the next time. We denote the generative environment as $$\boldsymbol{s_1} \sim \mathcal{N}(\boldsymbol{0}, I), \quad \boldsymbol{s_t} \sim \mathcal{N} (h(\boldsymbol{s_{t-1}},\boldsymbol{a_{t-1}}), \Sigma),$$ where $\Sigma$ is the covariance matrix and $h$ is the mean value as the ground truth transition function implemented by deep neural networks under causal graph $\mathcal{G}$. Specifically, the linear condition consists of a single-layer network, and the nonlinear function is three-layer MLPs with sigmoid activation.
 
 <img src="./figures/synthetic_exp.png" width="100%"/>
 
