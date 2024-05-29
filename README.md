@@ -27,23 +27,28 @@ The following theorem shows a reduced error bound with causal exploration.
 The first inequality establishes an upper bound for $\xi$ at $ \delta^k $. Given that $0 \le \delta^k \le 1$, this confirms the effectiveness of causal exploration in enhancing efficiency. The subsequent inequality establishes that the training error of causal exploration gradually converges to the optimal value, exhibiting an \textit{exponential} convergence rate characterized by the decay of the factor $\left[ \delta  \left( 1- \frac m M \right)\right]^k$. Moreover, this theorem implies that the advantages of causal exploration are relevant to the sparseness of causal structure. The sparser the causal structure, the faster our method learns. When the causal matrix $D$ is a complete matrix ($\delta = 1$), causal exploration degenerates into non-causal prediction-based exploration. The proof for Theorem 1 is provided in [Supplementary_material.pdf](https://github.com/CMACH508/CausalExploration/tree/main/Supplementary_material.pdf).
 
 ## Experiments
-**Synthetic Datasets**
+**Synthetic Datasets.**
 We build our simulated environment following the state space model with controls. When the agent takes an action $\boldsymbol{a}_t$ based on the current state, the environment provides feedback $\boldsymbol{s}_{t+1}$ at the next time. We denote the generative environment as $$\boldsymbol{s}_1 \sim \mathcal{N}(\boldsymbol{0}, I), \quad \boldsymbol{s}_t \sim \mathcal{N} (h(\boldsymbol{s}_{t-1},\boldsymbol{a}_{t-1}), \Sigma),$$ where $\Sigma$ is the covariance matrix and $h$ is the mean value as the ground truth transition function implemented by deep neural networks under causal graph $\mathcal{G}$. Specifically, the linear condition consists of a single-layer network, and the nonlinear function is three-layer MLPs with sigmoid activation.
 
 <img src="./figures/synthetic_exp.png" width="100%"/>
 
 To install, run
 ```
-$ cd ./simulation 
-$ conda env create -f environment.yml
+cd ./simulation 
+conda env create -f environment.yml
 ```
 or
 ```
-$ cd ./simulation 
-$ conda create -n your_env_name python=3.7
-$ pip install -r requirements.txt
+cd ./simulation 
+conda create -n your_env_name python=3.7
+pip install -r requirements.txt
 ```
 To train, run
 ```
 python main.py
 ```
+
+**Traffic Signal Control.**
+Traffic signal control is an important means of mitigating congestion in traffic management. Compared to using fixed-duration traffic signals, an RL agent learns a policy to determine real-time traffic signal states based on current road conditions. The state observed by the agent at each time consists of five dimensions of information, namely the number of vehicles, queue length, average waiting time in each lane plus current and next traffic signal states. Action here is to decide whether to change the traffic signal state or not. For example, suppose the traffic signal is red at time $t$, if the agent takes action $1$, then it will change to green at the next time $t+1$, otherwise, it will remain red. Following the work in [IntelliLight](https://dl.acm.org/doi/10.1145/3219819.3220096), the traffic environment in our experiment is a three-lane intersection. 
+
+<img src="./figures/traffic_illu.png" width="100%"/>
