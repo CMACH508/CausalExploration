@@ -11,7 +11,6 @@ from .GraphClass import CausalGraph
 from causallearn.utils.PCUtils.BackgroundKnowledge import BackgroundKnowledge
 from causallearn.utils.PCUtils.Helper import append_value
 from .cit import CIT
-import time
 
 
 def skeleton_discovery(
@@ -59,11 +58,8 @@ def skeleton_discovery(
 
     no_of_var = data.shape[1]
     true_no_of_var = state_dim
-    # no_of_var = int( data.shape[1] / 2)
     cg = CausalGraph(no_of_var, node_names)
-    # print(cg.G.graph)
     cg.set_ind_test(indep_test)
-    time_depth_list = []
 
     
     edge_removal = []
@@ -85,9 +81,8 @@ def skeleton_discovery(
 
     depth = -1
     pbar = tqdm(total=no_of_var) if show_progress else None
-    while cg.max_degree() - 1 > depth:
+    while depth < 4:
         depth += 1
-        c_time_list = []
         edge_removal = []
         if show_progress:
             pbar.reset()
@@ -125,11 +120,7 @@ def skeleton_discovery(
 
                 Neigh_x_noy = np.delete(Neigh_x, np.where(Neigh_x == y))
                 for S in combinations(Neigh_x_noy, depth):
-                    start_time = time.time()
                     p = cg.ci_test(x, y, S)
-                    end_time = time.time()
-                    run_time = end_time - start_time
-                    c_time_list.append(run_time)
                     if p > alpha:
                         if verbose:
                             print('%d ind %d | %s with p-value %f\n' % (x, y, S, p))
@@ -161,10 +152,8 @@ def skeleton_discovery(
             edge1 = cg.G.get_edge(cg.G.nodes[x], cg.G.nodes[y])
             if edge1 is not None:
                 cg.G.remove_edge(edge1)
-        if len(c_time_list):
-            time_depth_list.append([depth, len(c_time_list), sum(c_time_list) / len(c_time_list)])
 
     if show_progress:
         pbar.close()
 
-    return cg, time_depth_list
+    return cg
