@@ -53,6 +53,11 @@ Traffic signal control is an important means of mitigating congestion in traffic
 
 <img src="./figures/traffic_illu.png" width="100%"/>
 
+You may first need to install the packages or environments listed in './traffic', and then train the codes by running
+```
+python main.py
+```
+
 **MuJoCo Tasks.**
 We also evaluate causal exploration on the challenging [MuJoCo](https://mujoco.org) tasks, where the state-action dimensions range from tens (Hopper-v2) to hundreds (Humanoid-v2). Implementation details and more experimental results including the identified causal structures are given in [Supplementary_material.pdf](https://github.com/CMACH508/CausalExploration/tree/main/Supplementary_material.pdf).
 
