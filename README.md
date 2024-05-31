@@ -1,6 +1,3 @@
-## News
-Caught up in the whirlwind of NeurIPS'24 — this repo might have to wait a bit for its turn in the spotlight!
-
 # CausalExploration
 This is the official implementation of the paper "Boosting Efficiency in Task-Agnostic Exploration through Causal Knowledge", which was accepted for IJCAI'24. 
 
@@ -63,7 +60,13 @@ We also evaluate causal exploration on the challenging [MuJoCo](https://mujoco.o
 
 <img src="./figures/mujoco_exp.png" width="100%"/>
 
-## Acknowledgements
-Our codes are partly based on the following GitHub repository: [IntelliLight](https://github.com/wingsweihua/IntelliLight), [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch/). Thanks for their awesome works.
+You may first need to install the packages or environments listed in './mujoco', and then train the codes by running
+```
+python main.py
+```
 
 ## Citation
+If you find this work useful for your research, please cite our paper:
+
+## Acknowledgements
+Our codes are partly based on the following GitHub repository: [IntelliLight](https://github.com/wingsweihua/IntelliLight), [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch/). Thanks for their awesome works.
