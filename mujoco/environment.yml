@@ -137,5 +137,5 @@ dependencies:
     - wcwidth==0.2.6
     - wrapt==1.16.0
     - zipp==3.15.0
-prefix: /home/yangyupei/.conda/envs/mujoco_py
+prefix: .conda/envs/mujoco_py
 
