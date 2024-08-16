@@ -67,7 +67,7 @@ python main.py
 
 ## Citation
 If you find this work useful for your research, please cite our paper:
-```bibtex
+```
 @inproceedings{yang-boosting-2024,
   title     = {Boosting Efficiency in Task-Agnostic Exploration through Causal Knowledge},
   author    = {Yang, Yupei and Huang, Biwei and Tu, Shikui and Xu, Lei},
