@@ -67,6 +67,19 @@ python main.py
 
 ## Citation
 If you find this work useful for your research, please cite our paper:
+```bibtex
+@inproceedings{yang-boosting-2024,
+  title     = {Boosting Efficiency in Task-Agnostic Exploration through Causal Knowledge},
+  author    = {Yang, Yupei and Huang, Biwei and Tu, Shikui and Xu, Lei},
+  booktitle = {Proceedings of the Thirty-Third International Joint Conference on
+               Artificial Intelligence, {IJCAI-24}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  pages     = {5344--5352},
+  year      = {2024},
+  month     = {8},
+}
+```
+
 
 ## Acknowledgements
 Our codes are partly based on the following GitHub repository: [IntelliLight](https://github.com/wingsweihua/IntelliLight), [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch/). Thanks for their awesome works.
